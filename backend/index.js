@@ -5,7 +5,7 @@ const app = express()
 
 // keep this port different from the one selected for the frontend (react app)
 // we have selected 3000 for the frontend, so we will select 5000 for the backend
-const port = 5000
+const port = process.env.PORT || 5000;
 
 const mongoDB = require('./db');
 mongoDB();
