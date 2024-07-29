@@ -1,8 +1,10 @@
+
+require('dotenv').config();
 // install mongoose
 const mongoose = require('mongoose');
 
 // change the password and add the name of the database before the ?retryWrites
-const mongoURI = 'mongodb+srv://PreetMistry_GoFood:preet2410@cluster0.a7t4buw.mongodb.net/GoFoodDB?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = process.env.MONGO_URI;
 
 const mongoDB = async ()=>{
 
