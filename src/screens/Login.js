@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 
 import { Link } from 'react-router-dom'
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 export default function Login() {
 
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -16,7 +18,7 @@ export default function Login() {
     e.preventDefault();
     console.log('Form Submitted');
 
-    const response = await fetch('http://localhost:5000/api/loginuser', {
+    const response = await fetch(`${backendUrl}/api/loginuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

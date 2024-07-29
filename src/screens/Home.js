@@ -14,6 +14,8 @@ import img6 from '../images/milkshake.jpg'
 import img7 from '../images/sandwich.jpg'
 import img8 from '../images/tacos.jpg'
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 export default function Home() {
 
   // useState is a hook => it is used to create a state variable
@@ -27,7 +29,7 @@ export default function Home() {
   const [foodItems, setFoodItems] = useState([])
 
   const loadData = async () => {
-    let response = await fetch('http://localhost:5000/api/foodData', {
+    let response = await fetch(`${backendUrl}/api/foodData`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

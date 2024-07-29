@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 export default function Signup() {
 
   // useStates => pass the initial value of all the state
@@ -12,7 +14,7 @@ export default function Signup() {
     console.log('Form Submitted');
 
     // connect to backend
-    const response = await fetch('http://localhost:5000/api/createuser', {
+    const response = await fetch(`${backendUrl}/api/createuser`, {
       // post method => thus also send body
       method: 'POST',
       headers: {
